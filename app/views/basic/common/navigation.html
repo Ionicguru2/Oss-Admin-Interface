@@ -1,0 +1,76 @@
+<nav class="navbar-default navbar-static-side" role="navigation" style="height:100%;">
+    <div class="sidebar-collapse">
+        <ul side-navigation class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+
+                <div class="dropdown profile-element">
+                    <img alt="image" class="img-logo-sidebar" src="styles/patterns/logo.svg"/>
+                </div>
+                <div class="logo-element">
+                    <img alt="image" class="img-logo-sidebar-small" src="styles/patterns/logo_img.svg"/>
+                </div>
+
+            </li>
+
+            <!-- <li ui-sref-active="active">
+                <a href=""><i class="fa fa-user"></i> <span class="nav-label">USER INFORMATION</span></a>
+                <ul class="nav nav-second-level" ng-class="{in: $state.includes('charts')}">
+                    <li ui-sref-active="active"><a ui-sref="admin.internal-user">INTERNAL USERS</a></li>
+                    <li ui-sref-active="active"><a ui-sref="admin.external-user">EXTERNAL USERS</a></li>
+                </ul>
+            </li> -->
+            <li ui-sref-active="active">
+                <a ui-sref="basic.my-info">
+                    <i class="fa fa-user"></i>
+                    <span class="nav-label">MY INFORMATION</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="basic.contracts">
+                    <i class="fa fa-file-text"></i>
+                    <span class="nav-label">MY CONTRACTS</span>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <i class="fa fa-money"></i>
+                    <span class="nav-label">TRANSACTIONS</span>
+                </a>
+                <ul class="nav nav-second-level">
+                    <li ui-sref-active="active">
+                        <a ui-sref="basic.transaction.current">CURRENT</a>
+                    </li>
+                    <li ui-sref-active="active">
+                        <a ui-sref="basic.transaction.past">PAST</a>
+                    </li>
+                </ul>
+            </li>
+            <!-- <li ui-sref-active="active">
+                <a>
+                    <div class="nav-label">SUPPORT TICKETS</div>
+                </a>
+            </li> -->
+            <li ui-sref-active="active">
+                <a ui-sref="basic.products">
+                    <i class="fa fa-shopping-cart"></i>
+                    <span class="nav-label">PRODUCTS</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="basic.settings">
+                    <i class="fa fa-cog"></i>
+                    <span class="nav-label">SETTINGS</span>
+                </a>
+            </li>
+        </ul>
+
+        <ul side-navigation class="nav bottom-menu metismenu">
+            <li ui-sref-active="active" class="text-center">
+                <a ng-click="logout()" class="btn-logout"><i class="fa fa-sign-out"></i><span>Logout</span></a>
+            </li>
+            <li ui-sref-active="active" class="text-center">
+                <a href=""><i class="fa fa-question-circle"></i> <span class="nav-label">HELP</span></a>
+            </li>
+        </ul>
+    </div>
+</nav>

@@ -1,0 +1,101 @@
+<div class="modal-header">
+    <h3 class="modal-title">Create User</h3>
+</div>
+<div class="modal-body">
+    <div class="modal-create-user">
+        <form class="form-horizontal" name="userForm" ng-submit="done()">
+            <!-- <div class="form-group">
+                <label for="userid" class="col-sm-3 control-label">USER ID</label>
+                <div class="col-sm-8">
+                    
+                </div>
+            </div> -->
+            <div class="form-group">
+                <label for="email" class="col-sm-3 control-label">EMAIL</label>
+                <div class="col-sm-8">
+                    <input type="email" class="form-control" name="email" ng-model="data.email" required="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="firstname" class="col-sm-3 control-label">FIRST NAME</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" name="firstname" ng-model="data.firstname" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="lastname" class="col-sm-3 control-label">LAST NAME</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" name="lastname" ng-model="data.lastname" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password" class="col-sm-3 control-label">PASSWORD</label>
+                <div class="col-sm-8">
+                    <input type="password" class="form-control" name="password" ng-model="data.password">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="passcode" class="col-sm-3 control-label">PASSCODE</label>
+                <div class="col-sm-8">
+                    <input type="number" class="form-control" name="passcode" ng-model="data.passcode" ng-minlength="4" ng-maxlength="4">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="phone" class="col-sm-3 control-label">COUNTRY</label>
+                <div class="col-sm-8">
+                    <select 
+                        class="form-control" 
+                        ng-options="c as c.name for c in countries track by c.id" 
+                        name="country" ng-model="data.country_id"
+                        required="">
+                        <option value="">Select Country</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="phone" class="col-sm-3 control-label">PHONE</label>
+                <div class="col-sm-8">
+                    <input type="number" class="form-control" name="phone" ng-model="data.phone">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="phone" class="col-sm-3 control-label">COMPANY</label>
+                <div class="col-sm-8">
+                    <select 
+                        class="form-control" 
+                        ng-options="c as c.name for c in companies track by c.id" 
+                        name="company" ng-model="data.company_id"
+                        required="">
+                        <option value="">Select Company</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="accountType" class="col-sm-3 control-label">ACCOUNT TYPE</label>
+                <div class="col-sm-8">
+                    <label class="radio-inline">
+                        <input type="radio" ng-model="data.role_id" value="1"> BASIC
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" ng-model="data.role_id" value="2"> CSR
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" ng-model="data.role_id" value="3"> EXE
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" ng-model="data.role_id" value="4"> ADMIN
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div ng-show="error" class="text-danger col-sm-offset-3 col-sm-8">
+                    <strong ng-bind="error"></strong>
+                </div>
+            </div>
+            <div class="form-group text-center m-t-20">
+                <button class="btn btn-primary m-r-1" type="submit">CREATE</button>
+                <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>

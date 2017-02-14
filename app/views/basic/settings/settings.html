@@ -1,0 +1,64 @@
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="form-group white-bg col-lg-12 admin-title">
+        <span style="font-size: 20px;">User ID: {{loggedInUser.identifier}}</span>
+    </div>
+
+    <div class="col-lg-12 white-bg table-container">
+        <form class="title-box">
+            <span style="font-size: 16px;">Settings</span>
+        </form>
+
+        <div class="settings-content col-md-offset-3 col-md-6" style="padding-left: 10px; padding-right: 10px;">
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label class="control-label col-sm-5" for="email">USER ID</label>
+                    <div class="col-sm-6">
+                        <label class="form-control">{{loggedInUser.identifier}}</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-5" for="email">EMAIL</label>
+                    <div class="col-sm-6">
+                        <label class="form-control">{{loggedInUser.email}}</label>
+                    </div>
+                </div>
+                <div class="form-group" ng-show="editMode">
+                    <label class="control-label col-sm-5" for="pwd">PASSWORD</label>
+                    <div class="col-sm-6">
+                        <input type="password" class="form-control" id="pwd" placeholder="Enter password" ng-model="data.password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-5" for="region">REGION</label>
+                    <div class="col-sm-6">
+                        <label class="form-control" ng-show="!editMode">{{loggedInUser.region}}</label>
+                        <select 
+                            class="form-control" ng-show="editMode" 
+                            ng-options="region as region.name for region in regions track by region.id" 
+                            name="region" ng-model="data.region_id"
+                            required="">
+                            <option value="">Select Region</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- <div class="form-group">
+                    <label class="control-label col-sm-5" for="pin">PIN</label>
+                    <label class="control-label col-sm-6">
+                        <a><span class="pull-left">RESET PIN</span></a>
+                    </label>
+                </div> -->
+            </form>
+        </div>
+        <div class="form-group clearfix"></div>
+        <div class="form-group row text-center">
+            <div ng-if="!editMode">
+                <button class="btn btn-success form-button" ng-click="showEdit()">Edit</button>
+            </div>
+            <div ng-if="editMode">
+                <button class="btn btn-success form-button" ng-click="editInfo()">Done Editing</button>
+                <button class="btn form-button" ng-click="cancelEdit()">CANCEL</button>
+            </div>
+        </div> 
+    </div>
+
+</div>

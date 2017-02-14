@@ -1,0 +1,103 @@
+<div class="modal-header">
+    <h3 class="modal-title">User Information</h3>
+</div>
+<div class="modal-body">
+    <div class="modal-create-user">
+        <div class="settings-content col-md-offset-3 col-md-6">
+            <form class="form-horizontal" role="form" ng-submit="editInfo()">
+                <div class="form-group">
+                    <label class="control-label col-sm-5" for="email">USER ID</label>
+                    <label class="control-label col-sm-6">
+                        <span class="pull-left">{{loggedInUser.id}}</span>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-5" for="email">EMAIL</label>
+                    <div class="col-sm-6">
+                        <label class="control-label" ng-show="!editMode">{{loggedInUser.email}}</label>
+                        <input type="email" ng-show="editMode" class="form-control" id="email" placeholder="Email" ng-model="data.email" required="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-5" for="pwd">PASSWORD</label>
+                    <div class="col-sm-6">
+                        <label class="control-label" ng-show="!editMode">{{loggedInUser.password}}</label>
+                        <input type="password" ng-show="editMode" class="form-control" id="pwd" placeholder="Enter password" ng-model="data.password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-5" for="firstname">FIRST NAME</label>
+                    <div class="col-sm-6">
+                        <label class="control-label" ng-show="!editMode">{{loggedInUser.firstname}}</label>
+                        <input type="text" ng-show="editMode" class="form-control" id="firstname" placeholder="First Name" ng-model="data.firstname" required="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-5" for="lastname">LAST NAME</label>
+                    <div class="col-sm-6">
+                        <label class="control-label" ng-show="!editMode">{{loggedInUser.lastname}}</label>
+                        <input type="text" ng-show="editMode" class="form-control" id="lastname" placeholder="Last Name" ng-model="data.lastname" required="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-5" for="phone">PHONE NUMBER</label>
+                    <div class="col-sm-6">
+                        <label class="control-label" ng-show="!editMode">{{loggedInUser.phone}}</label>
+                        <input type="text" ng-show="editMode" class="form-control" id="phone" placeholder="Phone Number" ng-model="data.phone">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-5" for="company">COMPANY</label>
+                    <div class="col-sm-6">
+                        <label class="control-label" ng-show="!editMode">{{loggedInUser.company.name}}</label>
+                        <select 
+                            class="form-control" 
+                            ng-options="c as c.name for c in companies track by c.id" 
+                            name="company" ng-model="data.company_id"
+                            required="">
+                            <option value="">Select Company</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-5" for="job">JOB TITLE</label>
+                    <div class="col-sm-6">
+                        <label class="control-label" ng-show="!editMode">{{loggedInUser.job}}</label>
+                        <input type="text" ng-show="editMode" class="form-control" id="job" placeholder="Job" ng-model="data.job">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-5" for="country">COUNTRY</label>
+                    <div class="col-sm-6">
+                        <label class="control-label" ng-show="!editMode">{{loggedInUser.country}}</label>
+                        <input type="text" ng-show="editMode" class="form-control" id="country" placeholder="Country" ng-model="data.country">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-5" for="region">REGION</label>
+                    <div class="col-sm-6">
+                        <label class="control-label" ng-show="!editMode">{{loggedInUser.region}}</label>
+                        <input type="text" ng-show="editMode" class="form-control" id="region" placeholder="Region" ng-model="data.region">
+                        <select 
+                            class="form-control" 
+                            ng-options="region as region.name for region in regions track by region.id" 
+                            name="region" ng-model="data.region_id"
+                            required="">
+                            <option value="">Select Region</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="form-group clearfix"></div>
+        <div class="form-group row text-center">
+            <div ng-if="!editMode">
+                <button class="btn btn-success form-button" ng-click="showEdit()">Edit</button>
+            </div>
+            <div ng-if="editMode">
+                <button class="btn btn-success form-button">Done Editing</button>
+                <button class="btn form-button" ng-click="cancelEdit()">CANCEL</button>
+            </div>
+        </div>
+    </div>
+</div>

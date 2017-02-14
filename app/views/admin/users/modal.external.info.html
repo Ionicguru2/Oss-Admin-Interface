@@ -1,0 +1,77 @@
+<div class="modal-header">
+    <h3 class="modal-title">External User Information</h3>
+</div>
+<div class="modal-body">
+    <div class="modal-create-user">
+        <div class="settings-content">
+            <form class="form-horizontal" role="form" style="padding-left: 10px; padding-right: 10px;">
+                <div class="form-group">
+                    <label class="control-label col-sm-5" for="email">USER ID</label>
+                    <div class="col-sm-6">
+                        <label class="form-control">{{data.identifier}}</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-5" for="email">EMAIL</label>
+                    <div class="col-sm-6">
+                        <label class="form-control">{{data.email}}</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-5" for="pwd">PASSWORD</label>
+                    <div class="col-sm-6">
+                        <label class="form-control">{{data.password}}</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-5" for="firstname">FIRST NAME</label>
+                    <div class="col-sm-6">
+                        <label class="form-control">{{data.firstname}}</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-5" for="lastname">LAST NAME</label>
+                    <div class="col-sm-6">
+                        <label class="form-control">{{data.lastname}}</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-5" for="phone">PHONE NUMBER</label>
+                    <div class="col-sm-6">
+                        <label class="form-control">{{data.phone}}</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-5" for="company">COMPANY</label>
+                    <div class="col-sm-6">
+                        <label class="form-control">{{data.company.name}}</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-5" for="job">JOB TITLE</label>
+                    <div class="col-sm-6">
+                        <label class="form-control">{{data.job}}</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-5" for="country">COUNTRY</label>
+                    <div class="col-sm-6">
+                        <label class="control-label">{{data.country}}</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-5" for="region">REGION</label>
+                    <div class="col-sm-6">
+                        <label class="control-label">{{data.region}}</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="form-group clearfix"></div>
+        <div class="form-group row text-center">
+            <div>
+                <button class="btn form-button" ng-click="closeModal()">CLOSE</button>
+            </div>
+        </div>
+    </div>
+</div>

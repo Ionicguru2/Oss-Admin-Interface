@@ -1,0 +1,108 @@
+<div class="modal-header">
+    <h3 class="modal-title">External User Information</h3>
+</div>
+<div class="modal-body">
+    <div class="modal-create-user">
+        <div class="settings-content">
+            <form class="form-horizontal" ng-submit="done()" name="userForm" role="form" style="padding-left: 10px; padding-right: 10px;" >
+                <div class="form-group">
+                    <label class="control-label col-sm-5" for="email">USER ID</label>
+                    <div class="col-sm-6">
+                        <label class="form-control">{{data.identifier}}</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-5" for="email">EMAIL</label>
+                    <div class="col-sm-6">
+                        <label class="form-control" ng-show="!editMode">{{data.email}}</label>
+                        <input type="email" ng-show="editMode" class="form-control" id="email" placeholder="Email" ng-model="data.email" required="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-5" for="pwd">PASSWORD</label>
+                    <div class="col-sm-6">
+                        <label class="form-control" ng-show="!editMode">{{data.password}}</label>
+                        <input type="password" ng-show="editMode" class="form-control" id="pwd" placeholder="Enter password" ng-model="data.password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-5" for="firstname">FIRST NAME</label>
+                    <div class="col-sm-6">
+                        <label class="form-control" ng-show="!editMode">{{data.firstname}}</label>
+                        <input type="text" ng-show="editMode" class="form-control" id="firstname" placeholder="First Name" ng-model="data.firstname" required="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-5" for="lastname">LAST NAME</label>
+                    <div class="col-sm-6">
+                        <label class="form-control" ng-show="!editMode">{{data.lastname}}</label>
+                        <input type="text" ng-show="editMode" class="form-control" id="lastname" placeholder="Last Name" ng-model="data.lastname" required="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-5" for="phone">PHONE NUMBER</label>
+                    <div class="col-sm-6">
+                        <label class="form-control" ng-show="!editMode">{{data.phone}}</label>
+                        <input type="text" ng-show="editMode" class="form-control" id="phone" placeholder="Phone Number" ng-model="data.phone">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-5" for="company">COMPANY</label>
+                    <div class="col-sm-6">
+                        <label class="form-control" ng-show="!editMode">{{data.company.name}}</label>
+                        <!--<input type="text" ng-show="editMode" class="form-control" id="company" placeholder="Company" ng-model="data.company.name">-->
+                        <select 
+                            class="form-control" 
+                            ng-options="c as c.name for c in companies track by c.id" 
+                            name="company" ng-model="data.company_id">
+                            <option value="">Select Company</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-5" for="job">JOB TITLE</label>
+                    <div class="col-sm-6">
+                        <label class="form-control" ng-show="!editMode">{{data.job}}</label>
+                        <input type="text" ng-show="editMode" class="form-control" id="job" placeholder="Job" ng-model="data.job">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-5" for="country">COUNTRY</label>
+                    <div class="col-sm-6">
+                        <label class="control-label" ng-show="!editMode">{{data.country}}</label>
+                        <input type="text" ng-show="editMode" class="form-control" id="country" placeholder="Country" ng-model="data.country">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-5" for="region">REGION</label>
+                    <div class="col-sm-6">
+                        <!-- <label class="control-label" ng-show="!editMode">{{data.region}}</label> -->
+                        <select 
+                            class="form-control" 
+                            ng-options="region as region.name for region in regions track by region.id" 
+                            name="region" ng-model="data.region_id"
+                            required="">
+                            <option value="">Select Region</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div ng-show="error" class="text-danger col-sm-offset-5 col-sm-6">
+                        <strong ng-bind="error"></strong>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="form-group clearfix"></div>
+        <div class="form-group row text-center">
+            <div ng-if="!editMode">
+                <button class="btn btn-success form-button" ng-click="showEdit()">Edit</button>
+                <button class="btn form-button" ng-click="closeModal()">CLOSE</button>
+            </div>
+            <div ng-if="editMode">
+                <button class="btn btn-success form-button" ng-click="editInfo()">Done Editing</button>
+                <button class="btn form-button" ng-click="cancelEdit()">CANCEL</button>
+            </div>
+        </div>
+    </div>
+</div>
